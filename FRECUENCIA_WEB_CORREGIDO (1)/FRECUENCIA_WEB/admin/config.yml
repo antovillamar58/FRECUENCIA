@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "IMAGENES/uploads"
+public_folder: "/IMAGENES/uploads"
+
+collections:
+  - name: "noticias"
+    label: "Noticias"
+    folder: "content/noticias"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "select", options: ["Música", "Cultura Pop", "Viral", "Eventos", "Influencers"] }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Resumen", name: "summary", widget: "text" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
